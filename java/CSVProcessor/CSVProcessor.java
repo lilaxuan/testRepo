@@ -10,6 +10,57 @@ import java.util.*;
  * CSVProcessor is a class to help to read in the csv file, extract the user's information
  * and save the information in a list of list of string.
  */
+
+/// test dakjf ag a
+
+// remote main test
+
+public class CSVProcessor22{
+
+    private static String DELIMITER = "\"*,*\"";
+    private Map<String, Integer> headerInfoMap = new HashMap<>(); // key: headinfo; value:the index of the header.
+    private List<List<String>> allInfoList = new ArrayList<>();
+    private String csvFilePath;
+
+    /**
+     * Constructor
+     *
+     * @param csvFilePath - the file path of the csv file, expected as a String
+     * @throws IOException
+     */
+    public CSVProcessor(String csvFilePath) throws IOException {
+        this.csvFilePath  = csvFilePath;
+        this.readInCSV(this.csvFilePath);
+    }
+
+    /**
+     * Getter
+     *
+     * @return the file path of the csv file, expected as a String
+     */
+    public String getCsvFilePath() {
+        return csvFilePath;
+    }
+
+    /**
+     * Getter
+     *
+     * @return the header info map of the csv file, expected as a Map, which stores the key as
+     * the first column name (string), and the index of it(integer).
+     */
+    public Map<String, Integer> getHeaderInfoMap() {
+        return headerInfoMap;
+    }
+
+    /**
+     * Getter
+     *
+     * @return the all info list csv file, expected as a list of list of string.
+     */
+    public List<List<String>> getAllInfoList() {
+        return allInfoList;
+    }
+
 public class CSVProcessor {
 
     private static String DELIMITER = "\"*,*\"";
